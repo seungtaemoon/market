@@ -27,27 +27,27 @@ public class PostController {
     }
 
     // 판매 게시글 전체 리스트 조회
-    @GetMapping("/posts")
+    @GetMapping("/post")
     public List<PostResponseDto> getPosts() {
         return postService.getPosts();
     }
 
     // 판매 게시글 상세 조회
-    @GetMapping("/post/{id}")
-    public PostResponseDto getPostById(@PathVariable Long id){
-        return postService.getPostById(id);
+    @GetMapping("/post/{postId}")
+    public PostResponseDto getPostById(@PathVariable Long postId){
+        return postService.getPostById(postId);
     }
 
     // 판매 게시글 수정
-    @PutMapping("/post/{id}")
-    public PostResponseDto updatePost(@PathVariable Long id, @RequestBody PostRequestDto requestDto){
-        return postService.updatePost(id, requestDto);
+    @PutMapping("/post/{postId}")
+    public PostResponseDto updatePost(@PathVariable Long postId, @RequestBody PostRequestDto requestDto){
+        return postService.updatePost(postId, requestDto);
     }
 
     // 판매 게시글 삭제
-    @DeleteMapping("/post/{id}")
-    public PostDeleteResponseDto deletePost(@PathVariable Long id){
-        return postService.deletePost(id);
+    @DeleteMapping("/post/{postId}")
+    public PostDeleteResponseDto deletePost(@PathVariable Long postId){
+        return postService.deletePost(postId);
     }
 
 

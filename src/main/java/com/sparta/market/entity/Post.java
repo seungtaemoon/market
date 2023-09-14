@@ -13,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Getter
-@Setter
 @Table(name = "post")
 @NoArgsConstructor
 public class Post extends Timestamped {
@@ -25,7 +24,7 @@ public class Post extends Timestamped {
     @Column(name = "username", nullable = false)
     private String username;
     @Column(name = "contents", nullable = false, length = 500)
-    private String contents;
+    private String content;
     @Column(name = "price", nullable = false)
     private int price;
 
@@ -33,14 +32,14 @@ public class Post extends Timestamped {
     public Post(PostRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.username = requestDto.getUsername();
-        this.contents = requestDto.getContents();
+        this.content = requestDto.getContent();
         this.price = requestDto.getPrice();
     }
 
     public void update(PostRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.username = requestDto.getUsername();
-        this.contents = requestDto.getContents();
+        this.content = requestDto.getContent();
         this.price = requestDto.getPrice();
     }
 

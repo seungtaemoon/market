@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 public class PostRequestDto {
     private String title;
     private String username;
-    private String contents;
+    private String content;
     private int price;
 }
