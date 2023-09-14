@@ -7,6 +7,7 @@ import com.sparta.market.entity.Post;
 import com.sparta.market.repository.PostRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class PostService {
         );
     }
 
+    @Transactional
     public PostResponseDto updatePost(Long id, PostRequestDto requestDto) {
         Post post = findPost(id);
         post.update(requestDto);
